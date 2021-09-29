@@ -1,0 +1,44 @@
+{% comment %} Lien actuel avec class="active" Nous nous pouvons pas utiliser {%
+link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %}
+
+
+<div class="navbar-container">
+  <i class="fa fa-bars mobile-navbar-toggle" onclick="myFunction()"></i>
+  <a href="{% link accueil.html %}"><img src="../assets/img/Logo.png" class="logo" /></a>
+
+  <div class="links-container">
+    <a href="{% link accueil.html %}" class="nav-item {% if page.url == '/' %} active {% endif %}">Accueil</a>
+    <a href="{% link notre-enterprise.html %}" class="nav-item {% if page.url == '/notre-enterprise' %} active {% endif %}">Notre Enterprise</a>
+    <a href="{% link service.html %}" class="nav-item {% if page.url == '/services' %} active {% endif %}">Services</a>
+    <a href="{% link contact.html %}" class="nav-item {% if page.url == '/contact' %} active {% endif %}">Contact</a>
+    <a href="{% link devis.html %}" class="nav-item {% if page.url == '/devis' %} active {% endif %}">Devis</a>
+  </div>
+</div>
+
+<div class="mobile-navbar-container" id="sideBar">
+  <a href="{% link accueil.html %}" class="first mobile-nav-item {% if page.url == '/accueil' %} activate {% endif %}">Accueil</a>
+  <a href="{% link notre-enterprise.html %}" class="mobile-nav-item {% if page.url == '/notre-enterprise' %} activate {% endif %}">Notre Enterprise</a>
+  <a href="{% link service.html %}" class="mobile-nav-item {% if page.url == '/services' %} activate {% endif %}">Services</a>
+  <a href="{% link contact.html %}" class="mobile-nav-item {% if page.url == '/contact' %} activate {% endif %}">Contact</a>
+  <a href="{% link devis.html %}" class="mobile-nav-item {% if page.url == '/devis' %} activate {% endif %}">Devis</a>
+</div>
+
+<script>
+  function myFunction() {
+    document.getElementById("sideBar").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+</script>

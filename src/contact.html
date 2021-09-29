@@ -1,0 +1,73 @@
+---
+layout: default
+permalink: /contact
+---
+
+<div class="contact">
+  <div class="content-wrap">
+    <div class="left">
+      <div class="section-heading">
+        <span class="heading-bold">CONTACT</span> info
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.893127742035!2d2.4110397152961323!3d48.63102712464311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5de6b1e3c0917%3A0x42e1392bc488dd0a!2s7%20Av.%20de%20l&#39;Orme%20%C3%80%20Martin%2C%2091080%20%C3%89vry-Courcouronnes%2C%20France!5e0!3m2!1sen!2sng!4v1631008601581!5m2!1sen!2sng" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+      <div class="text-wrap">
+        <div class="sub-heading">
+          7 avenue de l'Orme à Martin, <br> 91080 Courcouronnes
+        </div>
+        <div class="text">
+          <span class="txt">Telephone:</span> 01 64 97 50 43
+        </div>
+        <div class="text">
+          <span class="txt">Email:</span> contact@bhgroupe.fr
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section-heading">
+        <span class="heading-bold">CONTACT</span> FORM
+      </div>
+      <form id="contactForm" class="mailform off2" method="post" action="{{ site.data.company.url.notify }}">
+        <input type="hidden" name="lang" value="fr">
+        <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+        <input type="hidden" name="type" value="contact" />
+        <input type="hidden" name="website" value="{{ site.data.company.website }}" />
+        <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+        <input type="hidden" name="firstName" value="" />
+        <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
+        <input type="text" placeholder="Name" required name="name" id="name" />
+        <input type="text" placeholder="Phone" required id="phone" name="phone" />
+        <input type="email" placeholder="Email" required id="email" name="email" />
+        <textarea name="" id="" cols="30" rows="10" placeholder="Message" name="message" id="message"></textarea>
+        <div class="g-recaptcha" style="margin-top: .5rem;"></div>
+        <br />
+        <div id="contact-form-response" style="color: white; margin-bottom: 1rem"></div>
+        <div class="checkbox" style="flex-direction: row; align-items: center;">
+          <input name="condition" type="checkbox" style="height: 1.5rem; width: 1.5rem; vertical-align: middle; margin-right: .5rem;" />
+          <span class="contact_content-form--label" style="font-size: 0.7rem;">
+            En utilisant ce formulaire, vous acceptez le stockage et la gestion
+            de vos données par ce site *</span>
+          <i class="fa fa-info-square" aria-hidden="true"></i>
+        </div>
+        <br />
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!--  -->
+<div class="footer">
+  <div class="icons-wrap iconwrap">
+    <div class="icon">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+    <div class="icon">
+      <i class="fab fa-twitter"></i>
+    </div>
+  </div>
+  <div class="section-text text">
+    © 2021 CAR REPAIR. ALL RIGHTS RESERVED.PRIVACY POLICY
+  </div>
+</div>
+
+<script src="./assets/js/formSubmit.js"></script>
+<script src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit' async defer'></script>
